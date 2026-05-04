@@ -63,11 +63,6 @@ public class ReportsService : IReportsService
         if (!response.IsSuccessStatusCode) return null;
 
         var json = await response.Content.ReadAsStringAsync(ct);
-        using var doc = JsonDocument.Parse(json);
-        if (!doc.RootElement.TryGetProperty("data", out var dataEl) ||
-            !dataEl.TryGetProperty("reportingDataResponse", out var reportingEl))
-            return null;
-
-        return JsonSerializer.Deserialize<CampaignReportResponseDto>(reportingEl.GetRawText());
+        return JsonSerializer.Deserialize<CampaignReportResponseDto>(json);
     }
 }
