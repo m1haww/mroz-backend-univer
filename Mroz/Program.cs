@@ -43,6 +43,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAppstoreConnectCredentialService, AppstoreConnectCredentialService>();
+builder.Services.AddScoped<IAppleSearchAdsCredentialService, AppleSearchAdsCredentialService>();
+builder.Services.AddScoped<ICampaignService, CampaignService>();
+builder.Services.AddScoped<IAdGroupService, AdGroupService>();
 
 var app = builder.Build();
 
