@@ -1,0 +1,6 @@
+@Mroz_HostAddress = http://localhost:8080
+
+GET {{Mroz_HostAddress}}/api/auth/me
+Accept: application/json
+
+###
