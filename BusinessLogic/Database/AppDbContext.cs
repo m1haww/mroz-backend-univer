@@ -1,3 +1,4 @@
+using Domain.Entities.App;
 using Domain.Entities.Credentials;
 using Domain.Entities.User;
 using Microsoft.EntityFrameworkCore;
@@ -20,5 +21,8 @@ public class AppDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; }
+    public DbSet<App> Apps { get; set; }
+    public DbSet<AppUser> AppUsers { get; set; }
     public DbSet<AppStoreConnectCredential> AppStoreConnectCredentials { get; set; }
+    public DbSet<AppleSearchAdsCredential> AppleSearchAdsCredentials { get; set; }
 }
