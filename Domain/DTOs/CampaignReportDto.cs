@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Domain.DTOs;
@@ -86,7 +87,7 @@ public class CampaignReportResponseDto
 public class CampaignReportRowDto
 {
     [JsonPropertyName("granularity")]
-    public List<string>? Granularity { get; set; }
+    public List<JsonElement>? Granularity { get; set; }
 
     [JsonPropertyName("metadata")]
     public CampaignReportMetadataDto? Metadata { get; set; }
