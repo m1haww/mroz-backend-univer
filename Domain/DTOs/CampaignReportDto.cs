@@ -1,4 +1,3 @@
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Domain.DTOs;
@@ -77,62 +76,83 @@ public class CampaignReportPaginationDto
 
 public class CampaignReportResponseDto
 {
+    [JsonPropertyName("data")]
+    public CampaignReportDataDto? Data { get; set; }
+}
+
+public class CampaignReportDataDto
+{
+    [JsonPropertyName("reportingDataResponse")]
+    public CampaignReportingDataResponseDto? ReportingDataResponse { get; set; }
+}
+
+public class CampaignReportingDataResponseDto
+{
     [JsonPropertyName("row")]
     public List<CampaignReportRowDto>? Row { get; set; }
-
-    [JsonPropertyName("grandTotals")]
-    public CampaignReportGrandTotalsDto? GrandTotals { get; set; }
 }
 
 public class CampaignReportRowDto
 {
-    [JsonPropertyName("granularity")]
-    public List<JsonElement>? Granularity { get; set; }
+    [JsonPropertyName("other")]
+    public bool Other { get; set; }
+
+    [JsonPropertyName("date")]
+    public string? Date { get; set; }
 
     [JsonPropertyName("metadata")]
     public CampaignReportMetadataDto? Metadata { get; set; }
 
-    [JsonPropertyName("total")]
-    public KeywordReportTotalDto? Total { get; set; }
-
-    [JsonPropertyName("other")]
-    public bool Other { get; set; }
-}
-
-public class CampaignReportGrandTotalsDto
-{
-    [JsonPropertyName("other")]
-    public bool Other { get; set; }
+    [JsonPropertyName("granularity")]
+    public List<CampaignReportRowTotalDto>? Granularity { get; set; }
 
     [JsonPropertyName("total")]
-    public KeywordReportTotalDto? Total { get; set; }
+    public CampaignReportRowTotalDto? Total { get; set; }
+
+    [JsonPropertyName("revenue")]
+    public decimal? Revenue { get; set; }
+
+    [JsonPropertyName("roas")]
+    public decimal? Roas { get; set; }
+
+    [JsonPropertyName("arpu")]
+    public decimal? Arpu { get; set; }
+
+    [JsonPropertyName("trialsCount")]
+    public int? TrialsCount { get; set; }
+
+    [JsonPropertyName("cac")]
+    public decimal? Cac { get; set; }
+
+    [JsonPropertyName("trial2PaidConversionRate")]
+    public double Trial2PaidConversionRate { get; set; }
+
+    [JsonPropertyName("install2TrialConversionRate")]
+    public double Install2TrialConversionRate { get; set; }
+
+    [JsonPropertyName("install2PaidConversionRate")]
+    public double Install2PaidConversionRate { get; set; }
+
+    [JsonPropertyName("costPerTrial")]
+    public decimal? CostPerTrial { get; set; }
 }
 
 public class CampaignReportMetadataDto
 {
-    [JsonPropertyName("adChannelType")]
-    public string? AdChannelType { get; set; }
-
-    [JsonPropertyName("billingEvent")]
-    public string? BillingEvent { get; set; }
-
-    [JsonPropertyName("biddingStrategy")]
-    public string? BiddingStrategy { get; set; }
-
-    [JsonPropertyName("targetCpa")]
-    public MoneyDto? TargetCpa { get; set; }
-
-    [JsonPropertyName("supplySources")]
-    public List<string>? SupplySources { get; set; }
-
     [JsonPropertyName("campaignId")]
     public long? CampaignId { get; set; }
 
-    [JsonPropertyName("campaignName")]
-    public string? CampaignName { get; set; }
+    [JsonPropertyName("orgId")]
+    public long? OrgId { get; set; }
 
     [JsonPropertyName("deleted")]
     public bool Deleted { get; set; }
+
+    [JsonPropertyName("modificationTime")]
+    public string? ModificationTime { get; set; }
+
+    [JsonPropertyName("campaignName")]
+    public string? CampaignName { get; set; }
 
     [JsonPropertyName("campaignStatus")]
     public string? CampaignStatus { get; set; }
@@ -149,29 +169,32 @@ public class CampaignReportMetadataDto
     [JsonPropertyName("countriesOrRegions")]
     public List<string>? CountriesOrRegions { get; set; }
 
-    [JsonPropertyName("modificationTime")]
-    public string? ModificationTime { get; set; }
-
     [JsonPropertyName("totalBudget")]
     public MoneyDto? TotalBudget { get; set; }
 
-    [JsonPropertyName("dailyBudgetAmount")]
-    public MoneyDto? DailyBudgetAmount { get; set; }
+    [JsonPropertyName("dailyBudget")]
+    public MoneyDto? DailyBudget { get; set; }
 
     [JsonPropertyName("displayStatus")]
     public string? DisplayStatus { get; set; }
 
-    [JsonPropertyName("orgId")]
-    public long? OrgId { get; set; }
+    [JsonPropertyName("supplySources")]
+    public List<string>? SupplySources { get; set; }
+
+    [JsonPropertyName("adChannelType")]
+    public string? AdChannelType { get; set; }
 
     [JsonPropertyName("countryOrRegionServingStateReasons")]
-    public object? CountryOrRegionServingStateReasons { get; set; }
+    public Dictionary<string, object>? CountryOrRegionServingStateReasons { get; set; }
 
-    [JsonPropertyName("countryOrRegion")]
-    public string? CountryOrRegion { get; set; }
+    [JsonPropertyName("billingEvent")]
+    public string? BillingEvent { get; set; }
 
-    [JsonPropertyName("deviceClass")]
-    public string? DeviceClass { get; set; }
+    [JsonPropertyName("biddingStrategy")]
+    public string? BiddingStrategy { get; set; }
+
+    [JsonPropertyName("targetCpa")]
+    public MoneyDto? TargetCpa { get; set; }
 }
 
 public class CampaignReportAppDto
@@ -181,4 +204,76 @@ public class CampaignReportAppDto
 
     [JsonPropertyName("adamId")]
     public long? AdamId { get; set; }
+}
+
+public class CampaignReportRowTotalDto
+{
+    [JsonPropertyName("date")]
+    public string? Date { get; set; }
+
+    [JsonPropertyName("localSpend")]
+    public MoneyDto? LocalSpend { get; set; }
+
+    [JsonPropertyName("tapInstalls")]
+    public int? TapInstalls { get; set; }
+
+    [JsonPropertyName("tapInstallCPI")]
+    public MoneyDto? TapInstallCpi { get; set; }
+
+    [JsonPropertyName("impressions")]
+    public int? Impressions { get; set; }
+
+    [JsonPropertyName("taps")]
+    public int? Taps { get; set; }
+
+    [JsonPropertyName("ttr")]
+    public decimal? Ttr { get; set; }
+
+    [JsonPropertyName("avgCPT")]
+    public MoneyDto? AvgCpt { get; set; }
+
+    [JsonPropertyName("totalNewDownloads")]
+    public int? TotalNewDownloads { get; set; }
+
+    [JsonPropertyName("totalRedownloads")]
+    public int? TotalRedownloads { get; set; }
+
+    [JsonPropertyName("viewInstalls")]
+    public int? ViewInstalls { get; set; }
+
+    [JsonPropertyName("totalInstalls")]
+    public int? TotalInstalls { get; set; }
+
+    [JsonPropertyName("tapNewDownloads")]
+    public int? TapNewDownloads { get; set; }
+
+    [JsonPropertyName("tapRedownloads")]
+    public int? TapRedownloads { get; set; }
+
+    [JsonPropertyName("viewNewDownloads")]
+    public int? ViewNewDownloads { get; set; }
+
+    [JsonPropertyName("viewRedownloads")]
+    public int? ViewRedownloads { get; set; }
+
+    [JsonPropertyName("tapPreOrdersPlaced")]
+    public int? TapPreOrdersPlaced { get; set; }
+
+    [JsonPropertyName("viewPreOrdersPlaced")]
+    public int? ViewPreOrdersPlaced { get; set; }
+
+    [JsonPropertyName("totalPreOrdersPlaced")]
+    public int? TotalPreOrdersPlaced { get; set; }
+
+    [JsonPropertyName("totalAvgCPI")]
+    public MoneyDto? TotalAvgCpi { get; set; }
+
+    [JsonPropertyName("totalInstallRate")]
+    public decimal? TotalInstallRate { get; set; }
+
+    [JsonPropertyName("tapInstallRate")]
+    public decimal? TapInstallRate { get; set; }
+
+    [JsonPropertyName("avgCPM")]
+    public MoneyDto? AvgCpm { get; set; }
 }
