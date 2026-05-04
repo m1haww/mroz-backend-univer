@@ -47,6 +47,7 @@ builder.Services.AddScoped<IAppstoreConnectCredentialService, AppstoreConnectCre
 builder.Services.AddScoped<IAppleSearchAdsCredentialService, AppleSearchAdsCredentialService>();
 builder.Services.AddScoped<ICampaignService, CampaignService>();
 builder.Services.AddScoped<IAdGroupService, AdGroupService>();
+builder.Services.AddScoped<IRevenuecatUserService, RevenuecatUserService>();
 
 var app = builder.Build();
 

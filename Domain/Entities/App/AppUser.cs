@@ -10,4 +10,5 @@ public class AppUser
     public long? KeywordId { get; set; }
     public long? AdGroupId { get; set; }
     public string CountryCode { get; set; } = string.Empty;
+    public bool HasTrial { get; set; }
 }
