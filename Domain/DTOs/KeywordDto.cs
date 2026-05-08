@@ -40,3 +40,39 @@ public class KeywordListResponseDto
     [JsonPropertyName("data")]
     public List<KeywordDto>? Data { get; set; }
 }
+
+public class KeywordResponseDto
+{
+    [JsonPropertyName("data")]
+    public KeywordDto? Data { get; set; }
+}
+
+public class CreateKeywordDto
+{
+    [JsonPropertyName("text")]
+    public string Text { get; set; } = string.Empty;
+
+    [JsonPropertyName("matchType")]
+    public string MatchType { get; set; } = "BROAD";
+
+    [JsonPropertyName("bidAmount")]
+    public MoneyDto? BidAmount { get; set; }
+
+    [JsonPropertyName("status")]
+    public string? Status { get; set; }
+}
+
+public class UpdateKeywordDto
+{
+    [JsonPropertyName("id")]
+    public long Id { get; set; }
+
+    [JsonPropertyName("matchType")]
+    public string? MatchType { get; set; }
+
+    [JsonPropertyName("bidAmount")]
+    public MoneyDto? BidAmount { get; set; }
+
+    [JsonPropertyName("status")]
+    public string? Status { get; set; }
+}

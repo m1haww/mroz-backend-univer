@@ -73,6 +73,18 @@ public class KeywordReportPaginationDto
 
 public class KeywordReportResponseDto
 {
+    [JsonPropertyName("data")]
+    public KeywordReportDataDto? Data { get; set; }
+}
+
+public class KeywordReportDataDto
+{
+    [JsonPropertyName("reportingDataResponse")]
+    public KeywordReportingDataResponseDto? ReportingDataResponse { get; set; }
+}
+
+public class KeywordReportingDataResponseDto
+{
     [JsonPropertyName("row")]
     public List<KeywordReportRowDto>? Row { get; set; }
 

@@ -4,8 +4,8 @@
   "steps": {
     "build": {
       "commands": [
-        "dotnet restore Mroz/Mroz.csproj",
-        "dotnet publish Mroz/Mroz.csproj --no-restore -c Release -o out"
+        "dotnet restore Api/Api.csproj",
+        "dotnet publish Api/Api.csproj --no-restore -c Release -o out"
       ]
     }
   },
