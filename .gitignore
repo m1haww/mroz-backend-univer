@@ -107,11 +107,3 @@ Thumbs.db
 *.swp
 *~
 *.orig
-
-# AI tools
-.claude/
-.claude.json
-CLAUDE.md
-.cursor/
-.cursorrules
-.github/copilot-instructions.md

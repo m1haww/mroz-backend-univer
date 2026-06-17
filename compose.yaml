@@ -1,0 +1,33 @@
+# For Railway: deploy this project and use the Api service.
+# Railway will build from Dockerfile and set PORT automatically.
+# For local dev: run `docker compose up` and open http://localhost:8080
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      # Override in Railway (or .env) for production DB and JWT
+      # - ConnectionStrings__DefaultConnection=${DATABASE_URL}
+      # - Jwt__Key=${JWT_KEY}
+    # Uncomment to use a local Postgres when developing with Docker
+    # env_file:
+    #   - .env
+    # depends_on:
+    #   - db
+  # db:
+  #   image: postgres:16-alpine
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: mroz
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - pgdata:/var/lib/postgresql/data
+# volumes:
+#   pgdata:

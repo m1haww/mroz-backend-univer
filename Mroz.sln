@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mroz", "Mroz\Mroz.csproj", "{1DBEF112-1ADE-4C2D-9424-8243DF0B70CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{1DBEF112-1ADE-4C2D-9424-8243DF0B70CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{3F0D74A5-18D0-4C98-8340-79FADF27B6BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{E95AEA68-9A0D-43BC-8190-87873934AAE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{326E71F4-33C9-477A-A45F-21E29A219F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,18 @@ Global
 		{E95AEA68-9A0D-43BC-8190-87873934AAE6}.Release|x64.Build.0 = Release|Any CPU
 		{E95AEA68-9A0D-43BC-8190-87873934AAE6}.Release|x86.ActiveCfg = Release|Any CPU
 		{E95AEA68-9A0D-43BC-8190-87873934AAE6}.Release|x86.Build.0 = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|x64.Build.0 = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Debug|x86.Build.0 = Debug|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|x64.ActiveCfg = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|x64.Build.0 = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|x86.ActiveCfg = Release|Any CPU
+		{326E71F4-33C9-477A-A45F-21E29A219F01}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "provider": "dotnet",
+  "steps": {
+    "build": {
+      "commands": [
+        "dotnet restore Api/Api.csproj",
+        "dotnet publish Api/Api.csproj --no-restore -c Release -o out"
+      ]
+    }
+  },
+  "deploy": {
+    "startCommand": "dotnet ./out/Mroz.dll"
+  }
+}
